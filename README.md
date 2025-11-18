@@ -29,9 +29,9 @@ The dataset and pretrained models used in this project will be released soon.
 
 The datasets used in this project—FIXMYPOSE, PoseFixCPR, and AIST-CPR—are adapted from existing public datasets. Please refer to the original sources for full dataset details. For information on how these datasets were adapted in this project, please refer to our paper.
 
-- [FIXMYPOSE](https://fixmypose-unc.github.io/) — *FixMyPose: Pose Correctional Captioning and Retrieval* (AAAI 2021)
-- [PoseFix](https://europe.naverlabs.com/research/publications/posefix-correcting-3d-human-poses-with-natural-language/) — *PoseFix: Correcting 3D Human Poses with Natural Language* (ICCV 2023)
-- [AIST++](https://google.github.io/aichoreographer/) — *AI Choreographer: Music Conditioned 3D Dance Generation with AIST++* (ICCV 2021)
+- [FIXMYPOSE](https://fixmypose-unc.github.io/) - *FixMyPose: Pose Correctional Captioning and Retrieval* (AAAI 2021)
+- [PoseFix](https://europe.naverlabs.com/research/publications/posefix-correcting-3d-human-poses-with-natural-language/) - *PoseFix: Correcting 3D Human Poses with Natural Language* (ICCV 2023)
+- [AIST++](https://google.github.io/aichoreographer/) - *AI Choreographer: Music Conditioned 3D Dance Generation with AIST++* (ICCV 2021)
 
 ### Project Structure
 
@@ -64,12 +64,11 @@ AutoComPose/
 └── run.sh                        # Example script for training/testing
 ```
 
-### Setup Definitions
-
-- *human-1* — Uses one human-annotated description for each pose pair.
-- *auto-3* — Uses three PoseFix-generated descriptions for each pose pair.
-- *auto-3-cycle* — Same as *auto-3*, with the cyclic training scheme applied.
-- *mllm-mirror_reverse_3-cycle* — Uses three AutoComPose-generated descriptions, combined with swapping & mirroring augmentation and the cyclic training scheme.
+Setup Definitions:
+- *human-1* - Uses one human-annotated description for each pose pair.
+- *auto-3* - Uses three PoseFix-generated descriptions for each pose pair.
+- *auto-3-cycle* - Same as *auto-3*, with the cyclic training scheme applied.
+- *mllm-mirror_reverse_3-cycle* - Uses three AutoComPose-generated descriptions, combined with swapping & mirroring augmentation and the cyclic training scheme.
 
 ## Citation
 
