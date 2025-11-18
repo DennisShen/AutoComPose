@@ -82,6 +82,30 @@ Caption and Image Split Formats:
     - Transition descriptions under fields such as `sents` (human-annotated), `auto` (PoseFix-generated), and various AutoComPose-generated variants (e.g., `mllm`, `reverse`, `mirror`, etc.).
 - **Image Split JSON** - A list where each entry corresponds to a gallery image used for retrieval evaluation.
 
+## Run
+
+We provide a `run.sh` script that contains a wide range of example usages of the codebase, including training and testing commands. Below is an example illustrating how to run a Combiner evaluation using an AutoComPose-generated mode with cyclic training:
+
+```sh
+python src/combiner_test.py \
+    --dataset fixmypose \
+    --experiment-name mllm-mirror-reverse_3-cycle \
+    --clip-model-name RN50 \
+    --clip-model-path ./models/RN50/clip_finetuned_on_fixmypose_mllm-mirror-reverse_3-cycle/saved_models/tuned_clip_49.pt \
+    --combiner-model-path ./models/RN50/combiner_trained_on_fixmypose_mllm-mirror-reverse_3-cycle/saved_models/combiner_99.pt \
+    --transform squarepad \
+    --val-split test \
+```
+
+What this example does:
+- Runs the Combiner evaluation (`combiner_test.py`)
+- Uses the FIXMYPOSE dataset
+- Uses the **mllm-mirror-reverse_3-cycle** setup
+- Loads the corresponding fine-tuned CLIP and trained Combiner checkpoints
+- Applies the squarepad transform and evaluates on the test split
+
+More examples can be found inside `run.sh`. You can modify or directly copy these commands to run your own experiments.
+
 ## Citation
 
 If you use this code for your research, please cite our papers.
