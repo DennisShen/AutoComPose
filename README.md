@@ -94,7 +94,7 @@ python src/combiner_test.py \
     --clip-model-path ./models/RN50/clip_finetuned_on_fixmypose_mllm-mirror-reverse_3-cycle/saved_models/tuned_clip_49.pt \
     --combiner-model-path ./models/RN50/combiner_trained_on_fixmypose_mllm-mirror-reverse_3-cycle/saved_models/combiner_99.pt \
     --transform squarepad \
-    --val-split test \
+    --val-split test
 ```
 
 What this example does:
@@ -102,7 +102,7 @@ What this example does:
 - Uses the FIXMYPOSE dataset
 - Uses the **mllm-mirror-reverse_3-cycle** setup
 - Loads the corresponding fine-tuned CLIP and trained Combiner checkpoints
-- Applies the squarepad transform and evaluates on the test split
+- Evaluates on the test split
 
 More examples can be found inside `run.sh`. You can modify or directly copy these commands to run your own experiments.
 
