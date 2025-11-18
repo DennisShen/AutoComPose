@@ -40,25 +40,28 @@ Please organize your files according to the following directory structure:
 ```sh
 AutoComPose/
 ├── src/
-│   ├── clip_fine_tune.py   # Training code
-│   ├── combiner_train.py   # Training code
-│   ├── clip_test.py        # Testing code
-│   ├── combiner_test.py    # Testing code
-│   ├── combiner.py         # Model definition
-│   ├── data_utils.py       # Dataset processing
-│   ├── utils.py            # Utility functions
-│   └── validate.py         # Validation utilities
-├── fixmypose_dataset/      # Adapted FIXMYPOSE dataset
-│   ├── captions/           # Transition descriptions
-│   ├── images/             # Human pose images
-│   └── image_splits/       # Gallery images for retrieval
-├── aist_dataset/           # Adapted AIST++ dataset (same structure as above)
-├── posefix_dataset/        # Adapted PoseFix dataset (same structure as above)
-├── models/                 # Selected trained models used in the paper
-│   └── RN50/               # CLIP backbone
+│   ├── clip_fine_tune.py         # Training code
+│   ├── combiner_train.py         # Training code
+│   ├── clip_test.py              # Testing code
+│   ├── combiner_test.py          # Testing code
+│   ├── combiner.py               # Model definition
+│   ├── data_utils.py             # Dataset processing
+│   ├── utils.py                  # Utility functions
+│   └── validate.py               # Validation utilities
+│
+├── fixmypose_dataset/            # Adapted FIXMYPOSE dataset
+│   ├── captions/                 # Transition descriptions
+│   ├── images/                   # Human pose images
+│   └── image_splits/             # Gallery images for retrieval
+├── aist_dataset/                 # Adapted AIST++ dataset (same structure as above)
+├── posefix_dataset/              # Adapted PoseFix dataset (same structure as above)
+│
+├── models/                       # Selected trained models used in the paper
+│   └── RN50/                     # CLIP backbone
 │       └── {clip_finetuned | combiner_trained}_on_{fixmypose | aist | posefix}_{setup}/
 │           # setup ∈ {human-1, auto-3, auto-3-cycle, mllm-mirror-reverse_3-cycle}
-└── run.sh                  # Example script for training/testing
+│
+└── run.sh                        # Example script for training/testing
 ```
 
 ## Citation
