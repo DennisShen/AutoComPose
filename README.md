@@ -51,8 +51,12 @@ AutoComPose/
 │
 ├── fixmypose_dataset/            # Adapted FIXMYPOSE dataset
 │   ├── captions/                 # Transition descriptions
-│   ├── images/                   # Human pose images
+│   │   ├── train.json
+│   │   └── test.json
+│   ├── images/                   # All human pose images
 │   └── image_splits/             # Gallery images for retrieval
+│       ├── train.json
+│       └── test.json
 ├── aist_dataset/                 # Adapted AIST++ dataset (same structure as above)
 ├── posefix_dataset/              # Adapted PoseFix dataset (same structure as above)
 │
@@ -69,6 +73,14 @@ Setup Definitions:
 - *auto-3* - Uses three PoseFix-generated descriptions for each pose pair.
 - *auto-3-cycle* - Same as *auto-3*, with the cyclic training scheme applied.
 - *mllm-mirror_reverse_3-cycle* - Uses three AutoComPose-generated descriptions, combined with swapping & mirroring augmentation and the cyclic training scheme.
+
+Caption and Image Split Formats:
+- Caption JSON - A list of dictionaries, each describing a pose pair. Each entry contains:
+    - reference: reference image filename
+    - target: target image filename
+    - img_set: kept only for format consistency
+    - Transition descriptions under fields such as sents (human-annotated), auto (PoseFix-generated), and various AutoComPose-generated variants (e.g., mllm, reverse, mirror, etc.).
+- Image Split JSON - A list where each entry corresponds to a gallery image used for retrieval evaluation.
 
 ## Citation
 
