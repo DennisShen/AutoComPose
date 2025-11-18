@@ -6,7 +6,9 @@
 
 This repository serves as the official placeholder for the code, data, and models accompanying our paper *AutoComPose: Automatic Generation of Pose Transition Descriptions for Composed Pose Retrieval Using Multimodal LLMs* (ICCV 2025).
 
-## Installation
+## Getting Started
+
+### Installation
 
 This project is developed based on [CLIP4Cir](https://github.com/ABaldrati/CLIP4Cir). For additional details, background information, and related resources, please refer to the original repository.
 
@@ -19,11 +21,9 @@ conda install -y -c anaconda pandas=1.4.2
 pip install git+https://github.com/openai/CLIP.git
 ```
 
-## Getting Started
-
 ### Dataset and Models
 
-The dataset and pretrained models used in this project will be released soon. Please check back later for download links.
+The dataset and pretrained models used in this project will be released soon.
 
 ### Dataset Sources
 
@@ -39,7 +39,26 @@ Please organize your files according to the following directory structure:
 
 ```sh
 AutoComPose/
-├── /src
+├── src/
+│   ├── clip_fine_tune.py   # Training code
+│   ├── combiner_train.py   # Training code
+│   ├── clip_test.py        # Testing code
+│   ├── combiner_test.py    # Testing code
+│   ├── combiner.py         # Model definition
+│   ├── data_utils.py       # Dataset processing
+│   ├── utils.py            # Utility functions
+│   └── validate.py         # Validation utilities
+├── fixmypose_dataset/      # Adapted FIXMYPOSE dataset
+│   ├── captions/           # Transition descriptions
+│   ├── images/             # Human pose images
+│   └── image_splits/       # Gallery images for retrieval
+├── aist_dataset/           # Adapted AIST++ dataset (same structure as above)
+├── posefix_dataset/        # Adapted PoseFix dataset (same structure as above)
+├── models/                 # Selected trained models used in the paper
+│   └── RN50/               # CLIP backbone
+│       └── {clip_finetuned | combiner_trained}_on_{fixmypose | aist | posefix}_{setup}/
+│           # setup ∈ {human-1, auto-3, auto-3-cycle, mllm-mirror-reverse_3-cycle}
+└── run.sh                  # Example script for training/testing
 ```
 
 ## Citation
